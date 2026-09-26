@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Custom Properties ─────────────────────────────────────────────── */
+:root {
+  --color-bg: #f2f2f2;
+  --color-black: #111111;
+  --color-dark: #1e1e1e;
+  --color-gray: #838282;
+  --color-gray-light: #b6b5b5;
+  --color-border: rgba(30, 30, 30, 0.10);
+  --font-clash: "Clash Display", sans-serif;
+  --font-satoshi: "Satoshi", sans-serif;
+  --ease-reveal: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* ─── Base Reset ────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-black);
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  overflow-x: hidden;
+}
+
+/* ─── Custom Selection ──────────────────────────────────────────────── */
+::selection {
+  background: var(--color-black);
+  color: var(--color-bg);
+}
+
+/* ─── Custom Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-black);
+  border-radius: 999px;
+}
+
+/* ─── Typography Utilities ──────────────────────────────────────────── */
+.font-clash {
+  font-family: var(--font-clash);
+}
+.font-satoshi {
+  font-family: var(--font-satoshi);
+}
+
+/* ─── Echo Stack ────────────────────────────────────────────────────── */
+.echo-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── Image hover effects ────────────────────────────────────────────── */
+.img-hover {
+  filter: grayscale(20%);
+  transform: scale(1);
+  transition:
+    filter 400ms var(--ease-reveal),
+    transform 400ms var(--ease-reveal),
+    clip-path 700ms var(--ease-reveal);
+}
+.img-hover:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* ─── Card hover ────────────────────────────────────────────────────── */
+.service-card {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  transition: background 240ms ease;
+}
+.service-card:hover {
+  background: #ffffff;
+}
+
+/* ─── Divider hairline ──────────────────────────────────────────────── */
+.hairline {
+  width: 1px;
+  background: var(--color-border);
+}
+
+/* ─── Stepper overrides (mono palette) ─────────────────────────────── */
+.stepper-indicator-active {
+  background-color: var(--color-black) !important;
+  color: #ffffff !important;
+  border-color: var(--color-black) !important;
+}
+.stepper-indicator-done {
+  background-color: var(--color-black) !important;
+  color: #ffffff !important;
+  border-color: var(--color-black) !important;
+}
+.stepper-line-done {
+  background-color: var(--color-black) !important;
+}
