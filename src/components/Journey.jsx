@@ -2,89 +2,62 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { AnimatedStepper } from './AnimatedStepper'
 
-/* ─── Grade Card ────────────────────────────────────────────────────── */
-const GRADES = [
-  { subject: 'Mathematics',   grade: 'A*', highlight: true  },
-  { subject: 'Computing',     grade: 'A*', highlight: true  },
-  { subject: 'Physics',       grade: 'A*', highlight: true  },
-  { subject: 'English Lang.', grade: 'B',  highlight: false },
-  { subject: 'Biology',       grade: 'B',  highlight: false },
-  { subject: 'History',       grade: 'B',  highlight: false },
-]
-
-function GradeCard() {
+/* ─── Education Card ────────────────────────────────────────────────────── */
+function EducationCard() {
   return (
-    <div>
-      <div
-        className="grid grid-cols-3 gap-3 mb-6"
-        style={{ fontFamily: 'var(--font-satoshi)' }}
-      >
-        {GRADES.map(({ subject, grade, highlight }) => (
-          <div
-            key={subject}
-            style={{
-              padding: '16px 12px',
-              border: `1px solid ${highlight ? '#111111' : 'rgba(30,30,30,0.15)'}`,
-              borderRadius: '8px',
-              background: highlight ? '#111111' : 'transparent',
-              textAlign: 'center',
-            }}
-          >
-            <span
-              style={{
-                display: 'block',
-                fontFamily: 'var(--font-clash)',
-                fontWeight: 700,
-                fontSize: '28px',
-                letterSpacing: '-0.04em',
-                color: highlight ? '#f2f2f2' : '#111111',
-                lineHeight: 1,
-                marginBottom: '6px',
-              }}
-            >
-              {grade}
-            </span>
-            <span
-              style={{
-                display: 'block',
-                fontSize: '10px',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                color: highlight ? 'rgba(242,242,242,0.65)' : '#838282',
-                lineHeight: 1.3,
-              }}
-            >
-              {subject}
-            </span>
-          </div>
-        ))}
-      </div>
-      <div
-        style={{
-          padding: '14px 18px',
-          background: 'rgba(30,30,30,0.04)',
-          borderRadius: '8px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <span style={{ fontFamily: 'var(--font-satoshi)', fontSize: '13px', color: '#838282' }}>
-          Total GCSEs
-        </span>
-        <span style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '20px', letterSpacing: '-0.04em', color: '#111111' }}>
-          6 — 3A*&nbsp;3B
-        </span>
+    <div style={{ fontFamily: 'var(--font-satoshi)' }}>
+      <p style={{ fontSize: '14px', color: '#838282', lineHeight: 1.75, marginBottom: '20px' }}>
+        A strong academic foundation bridging mathematics, science, and computing, preparing for rigorous university-level study and a career in cybersecurity.
+      </p>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <div
+          style={{
+            padding: '16px',
+            border: '1px solid #111111',
+            borderRadius: '8px',
+            background: '#111111',
+          }}
+        >
+          <span style={{ fontFamily: 'var(--font-satoshi)', fontSize: '11px', letterSpacing: '0.12em', color: 'rgba(242,242,242,0.65)', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>
+            Current Focus
+          </span>
+          <h4 style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '20px', letterSpacing: '-0.03em', color: '#f2f2f2', marginBottom: '6px' }}>
+            A Levels
+          </h4>
+          <span style={{ fontSize: '13px', color: '#b6b5b5' }}>
+            Mathematics · Physics · Computer Science
+          </span>
+        </div>
+
+        <div
+          style={{
+            padding: '16px',
+            border: '1px solid rgba(30,30,30,0.15)',
+            borderRadius: '8px',
+            background: 'rgba(30,30,30,0.02)',
+          }}
+        >
+          <span style={{ fontFamily: 'var(--font-satoshi)', fontSize: '11px', letterSpacing: '0.12em', color: '#838282', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>
+            Previous
+          </span>
+          <h4 style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '20px', letterSpacing: '-0.03em', color: '#111111', marginBottom: '6px' }}>
+            IGCSEs
+          </h4>
+          <span style={{ fontSize: '13px', color: '#838282' }}>
+            Comprehensive core education emphasizing analytical skills.
+          </span>
+        </div>
       </div>
     </div>
   )
 }
 
-/* ─── Athletic Card ─────────────────────────────────────────────────── */
-function AthleticCard() {
+/* ─── Experience & Activities Card ─────────────────────────────────────────────────── */
+function ExperienceCard() {
   return (
     <div style={{ fontFamily: 'var(--font-satoshi)' }}>
-      {/* Cricket block */}
+      {/* Sports & Esports block */}
       <div
         style={{
           padding: '20px',
@@ -94,42 +67,22 @@ function AthleticCard() {
           background: 'rgba(30,30,30,0.02)',
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-          <div>
-            <span
-              style={{ fontFamily: 'var(--font-satoshi)', fontSize: '11px', letterSpacing: '0.12em', color: '#838282', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}
-            >
-              Cricket
-            </span>
-            <h4
-              style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '22px', letterSpacing: '-0.04em', color: '#111111', lineHeight: 1 }}
-            >
-              Man of the Match
-            </h4>
-            <p style={{ fontSize: '13px', color: '#838282', marginTop: '8px', lineHeight: 1.6 }}>
-              Multiple awards at the cricket academy — recognised for match-defining batting and strategic play.
-            </p>
-          </div>
-          {/* Trophy geometry */}
-          <div
-            style={{
-              width: '56px',
-              height: '56px',
-              border: '2px solid #111111',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-              marginLeft: '16px',
-            }}
-          >
-            <span style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '20px', letterSpacing: '-0.04em' }}>★</span>
-          </div>
-        </div>
+        <span
+          style={{ fontFamily: 'var(--font-satoshi)', fontSize: '11px', letterSpacing: '0.12em', color: '#838282', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}
+        >
+          Competitive Play
+        </span>
+        <h4
+          style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '22px', letterSpacing: '-0.04em', color: '#111111', lineHeight: 1 }}
+        >
+          Esports, Football & Cricket
+        </h4>
+        <p style={{ fontSize: '13px', color: '#838282', marginTop: '8px', lineHeight: 1.6 }}>
+          Whether on the pitch, the field, or in the digital arena, competitive environments teach rapid decision-making, strategic coordination, and resilience under pressure.
+        </p>
       </div>
 
-      {/* Football block */}
+      {/* Extracurriculars block */}
       <div
         style={{
           padding: '20px',
@@ -141,15 +94,15 @@ function AthleticCard() {
         <span
           style={{ fontFamily: 'var(--font-satoshi)', fontSize: '11px', letterSpacing: '0.12em', color: '#838282', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}
         >
-          Football
+          Leadership & Engagement
         </span>
         <h4
           style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '22px', letterSpacing: '-0.04em', color: '#111111', lineHeight: 1 }}
         >
-          Deep Passion
+          School Extracurriculars
         </h4>
         <p style={{ fontSize: '13px', color: '#838282', marginTop: '8px', lineHeight: 1.6 }}>
-          A tactical student of the beautiful game — football teaches reading patterns, anticipating systems, and reacting under pressure.
+          Active participation in school initiatives, fostering communication, teamwork, and a sense of community responsibility.
         </p>
       </div>
 
@@ -161,7 +114,7 @@ function AthleticCard() {
           flexWrap: 'wrap',
         }}
       >
-        {['Discipline', 'Team Tactics', 'Pressure Performance', 'Leadership'].map((tag) => (
+        {['Teamwork', 'Communication', 'Strategic Thinking', 'Discipline'].map((tag) => (
           <span
             key={tag}
             style={{
@@ -182,61 +135,55 @@ function AthleticCard() {
   )
 }
 
-/* ─── Tech Card ─────────────────────────────────────────────────────── */
-const TECH_ITEMS = [
-  { label: 'React', desc: 'Component-driven UI' },
-  { label: 'Vite',  desc: 'Lightning-fast builds' },
-  { label: 'Framer', desc: 'Motion & animation' },
-  { label: 'Tailwind', desc: 'Utility-first CSS' },
-  { label: 'LLM APIs', desc: 'AI integration layer' },
-  { label: 'Prompt Eng.', desc: 'Structured AI output' },
-]
-
-function TechCard() {
+/* ─── Projects & Goals Card ─────────────────────────────────────────────────────── */
+function ProjectsGoalsCard() {
   return (
     <div style={{ fontFamily: 'var(--font-satoshi)' }}>
       <p style={{ fontSize: '14px', color: '#838282', lineHeight: 1.75, marginBottom: '20px' }}>
-        Building AI-first web applications — from rapid prototyping to production deployments — combining LLM APIs with slick, performant frontends.
+        Actively building technical projects while charting a clear path toward a professional career in the cybersecurity industry.
       </p>
 
-      <div className="grid grid-cols-2 gap-3">
-        {TECH_ITEMS.map(({ label, desc }) => (
-          <div
-            key={label}
-            style={{
-              padding: '14px 16px',
-              border: '1px solid rgba(30,30,30,0.14)',
-              borderRadius: '8px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '4px',
-            }}
-          >
-            <span
-              style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '15px', letterSpacing: '-0.03em', color: '#111111' }}
-            >
-              {label}
-            </span>
-            <span style={{ fontSize: '11px', color: '#b6b5b5', letterSpacing: '0.04em' }}>{desc}</span>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        {/* Projects */}
+        <div style={{ padding: '16px', border: '1px solid rgba(30,30,30,0.14)', borderRadius: '8px' }}>
+          <span style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '18px', letterSpacing: '-0.03em', color: '#111111', display: 'block', marginBottom: '8px' }}>
+            Active Projects
+          </span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#111111' }}></span>
+              <span style={{ fontSize: '13px', color: '#838282' }}>AI-driven websites & web applications</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#111111' }}></span>
+              <span style={{ fontSize: '13px', color: '#838282' }}>Personal portfolio development</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#111111' }}></span>
+              <span style={{ fontSize: '13px', color: '#838282' }}>Hands-on cybersecurity learning & labs</span>
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div
-        style={{
-          marginTop: '16px',
-          padding: '14px 18px',
-          background: '#111111',
-          borderRadius: '8px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <span style={{ color: 'rgba(242,242,242,0.7)', fontSize: '13px' }}>Focus area</span>
-        <span style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '15px', letterSpacing: '-0.03em', color: '#f2f2f2' }}>
-          AI × Web Development
-        </span>
+        {/* Goals */}
+        <div
+          style={{
+            padding: '16px',
+            background: '#111111',
+            borderRadius: '8px',
+          }}
+        >
+          <span style={{ fontFamily: 'var(--font-satoshi)', fontSize: '11px', letterSpacing: '0.12em', color: 'rgba(242,242,242,0.65)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
+            Vision & Trajectory
+          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <span style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '15px', color: '#f2f2f2' }}>University</span>
+            <span style={{ color: 'rgba(242,242,242,0.4)', fontSize: '14px' }}>→</span>
+            <span style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '15px', color: '#f2f2f2' }}>Cybersecurity</span>
+            <span style={{ color: 'rgba(242,242,242,0.4)', fontSize: '14px' }}>→</span>
+            <span style={{ fontFamily: 'var(--font-clash)', fontWeight: 700, fontSize: '15px', color: '#f2f2f2' }}>Professional Career</span>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -245,19 +192,19 @@ function TechCard() {
 /* ─── Journey (main export) ─────────────────────────────────────────── */
 const STEPS = [
   {
-    title: 'Academic Foundation',
-    subtitle: 'GCSEs · Mathematics · Computing · Physics',
-    content: <GradeCard />,
+    title: 'Education',
+    subtitle: 'IGCSE · A Levels (Maths, Physics, CS)',
+    content: <EducationCard />,
   },
   {
-    title: 'Athletic Excellence',
-    subtitle: 'Cricket Academy · Football · Competitive Sport',
-    content: <AthleticCard />,
+    title: 'Experience & Activities',
+    subtitle: 'Esports · Football · Cricket · Extracurriculars',
+    content: <ExperienceCard />,
   },
   {
-    title: 'Technical Innovation',
-    subtitle: 'AI Web Development · Prompt Engineering · React',
-    content: <TechCard />,
+    title: 'Projects & Goals',
+    subtitle: 'AI Websites · Cybersecurity · Future Vision',
+    content: <ProjectsGoalsCard />,
   },
 ]
 

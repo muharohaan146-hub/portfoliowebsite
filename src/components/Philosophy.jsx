@@ -3,22 +3,22 @@ import { motion, useInView } from 'framer-motion'
 
 const PILLARS = [
   {
-    label: '01 — The Logic',
-    heading: 'Analytical\nFoundation',
-    body: 'Grounded in Computing, Physics, and Mathematics — disciplines that demand rigorous first-principles thinking and elegant problem decomposition.',
-    tags: ['Calculus', 'Algorithms', 'Physics', 'Computing'],
+    label: '01 — The Core',
+    heading: 'Analytical\nDefense',
+    body: 'Grounded in rigorous problem-solving and a deep interest in cybersecurity. Driven by the need to understand systems deeply in order to protect them.',
+    tags: ['Cybersecurity', 'Problem Solving', 'Tech'],
   },
   {
     label: '02 — The Code',
-    heading: 'AI-Driven\nCreation',
-    body: 'Turning abstract ideas into working digital products. Specialising in AI-powered web applications that are fast, purposeful, and beautifully made.',
-    tags: ['React', 'Prompt Eng.', 'AI / LLMs', 'Web Dev'],
+    heading: 'Technical\nInnovation',
+    body: 'Turning complex logic into secure digital products. Specializing in AI-powered web applications and exploring the forefront of AI programming tools.',
+    tags: ['Programming', 'AI Tools', 'Web Dev'],
   },
   {
     label: '03 — The Drive',
-    heading: 'Athletic\nMindset',
-    body: 'Cricket and football forge resilience, tactical thinking, and the discipline to perform under pressure — virtues that translate directly into shipping great work.',
-    tags: ['Cricket', 'Football', 'Leadership', 'Resilience'],
+    heading: 'Team &\nTactics',
+    body: 'Whether in esports, football, or cricket, competitive environments forge strong communication, teamwork, and the discipline to execute under pressure.',
+    tags: ['Esports', 'Football', 'Communication', 'Teamwork'],
   },
 ]
 
@@ -84,7 +84,7 @@ export default function Philosophy() {
           >
             analytical
           </em>{' '}
-          precision and dynamic performance.
+          problem-solving and secure technical innovation.
         </h2>
       </motion.div>
 

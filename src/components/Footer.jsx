@@ -5,7 +5,7 @@ const NAV_COLS = [
     heading: 'Muhammad Rohaan',
     content: (
       <p style={{ fontFamily: 'var(--font-satoshi)', fontSize: '13px', lineHeight: 1.8, color: 'rgba(246,246,246,0.50)', maxWidth: '220px' }}>
-        Computing, Physics &amp; Mathematics student. Building AI-driven web experiences where analytical precision meets creative execution.
+        Aspiring Cybersecurity Professional. Building AI-driven web experiences and mastering the intersection of security and technology.
       </p>
     ),
   },
@@ -40,8 +40,9 @@ const NAV_COLS = [
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         {[
           { label: 'Email', value: 'rohaan@email.com' },
+          { label: 'GitHub', value: 'github.com/muharohaan146-hub' },
+          { label: 'LinkedIn', value: 'linkedin.com/in/rohaan' },
           { label: 'Location', value: 'UAE' },
-          { label: 'Available', value: 'Open to projects' },
         ].map(({ label, value }) => (
           <div key={label} style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
             <span

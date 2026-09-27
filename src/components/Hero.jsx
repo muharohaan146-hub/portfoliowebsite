@@ -129,7 +129,7 @@ export default function Hero() {
             textTransform: 'uppercase',
           }}
         >
-          Computing&nbsp;&nbsp;·&nbsp;&nbsp;Physics&nbsp;&nbsp;·&nbsp;&nbsp;Mathematics
+          Cybersecurity&nbsp;&nbsp;·&nbsp;&nbsp;Technology&nbsp;&nbsp;·&nbsp;&nbsp;AI
         </p>
 
         {/* Divider line */}
@@ -142,12 +142,12 @@ export default function Hero() {
             fontSize: '14px',
             fontWeight: 500,
             color: '#111111',
-            maxWidth: '280px',
+            maxWidth: '320px',
             lineHeight: 1.6,
             textAlign: 'center',
           }}
         >
-          Building AI-driven web experiences at the intersection of logic and creativity.
+          Aspiring Cybersecurity Professional. Mastering the intersection of security, artificial intelligence, and robust problem-solving.
         </p>
       </motion.div>
 
