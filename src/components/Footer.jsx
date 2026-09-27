@@ -35,32 +35,12 @@ const NAV_COLS = [
     ),
   },
   {
-    heading: 'Built With',
-    content: (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        {['React 18', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Lucide React', 'Clash Display', 'Satoshi'].map((t) => (
-          <span
-            key={t}
-            style={{
-              fontFamily: 'var(--font-satoshi)',
-              fontSize: '13px',
-              color: 'rgba(246,246,246,0.50)',
-              letterSpacing: '0.04em',
-            }}
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-    ),
-  },
-  {
     heading: 'Contact',
     content: (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         {[
           { label: 'Email', value: 'rohaan@email.com' },
-          { label: 'Location', value: 'United Kingdom' },
+          { label: 'Location', value: 'UAE' },
           { label: 'Available', value: 'Open to projects' },
         ].map(({ label, value }) => (
           <div key={label} style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
@@ -101,8 +81,8 @@ export default function Footer() {
         padding: '80px 64px 48px',
       }}
     >
-      {/* 4-column grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      {/* 3-column grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-16" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         {NAV_COLS.map((col) => (
           <div key={col.heading}>
             <h4
@@ -126,7 +106,7 @@ export default function Footer() {
       <div
         className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8"
       >
-        {/* Large ROHAAN wordmark */}
+        {/* Large M.ROHAAN wordmark */}
         <span
           style={{
             fontFamily: 'var(--font-clash)',
@@ -138,7 +118,7 @@ export default function Footer() {
             userSelect: 'none',
           }}
         >
-          ROHAAN
+          M.ROHAAN
         </span>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', textAlign: 'right' }}>

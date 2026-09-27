@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-/* Echo stack: 5 layers of "ROHAAN", each shifted -0.04em left & up */
+/* Echo stack: 5 layers of "M.ROHAAN", each shifted -0.04em left & up */
 const ECHO_LAYERS = [
   { color: '#111111', offsetX: '0em',    offsetY: '0em',    zIndex: 5,  opacity: 1,    delay: 0.0 },
   { color: '#bfbfbf', offsetX: '-0.04em', offsetY: '-0.04em', zIndex: 4, opacity: 1,    delay: 0.08 },
@@ -67,7 +67,7 @@ export default function Hero() {
           className="font-satoshi"
           style={{ fontFamily: 'var(--font-satoshi)', fontSize: '11px', letterSpacing: '0.12em', color: '#838282' }}
         >
-          Based in UK
+          Based in UAE
         </span>
       </motion.div>
 
@@ -78,7 +78,7 @@ export default function Hero() {
         animate="visible"
         className="relative select-none text-center"
         style={{ lineHeight: 0.88 }}
-        aria-label="ROHAAN"
+        aria-label="M.ROHAAN"
       >
         {ECHO_LAYERS.map((layer, i) => (
           <motion.div
@@ -106,7 +106,7 @@ export default function Hero() {
                   }),
             }}
           >
-            ROHAAN
+            M.ROHAAN
           </motion.div>
         ))}
       </motion.div>
